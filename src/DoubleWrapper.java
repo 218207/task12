@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class DoubleWrapper {
 
     private double value;
@@ -33,10 +35,21 @@ public class DoubleWrapper {
     }
 
     public static void main(String[] args) {
-        DoubleWrapper dw = new DoubleWrapper(5.0);
-        System.out.println("Value is: " + dw.getValue());
-        System.out.println("Sum of 5.0 and 3.0: " + DoubleWrapper.add(5.0, 3.0));
-        System.out.println("Dividing 10.0 by 5.0: " + DoubleWrapper.divide(10.0, 5.0));
-        System.out.println("5.0 to the power of 3: " + DoubleWrapper.pow(5.0, 3));
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите первое число: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Введите второе число: ");
+        double b = scanner.nextDouble();
+
+        DoubleWrapper a1 = new DoubleWrapper(a);
+        DoubleWrapper b1 = new DoubleWrapper(b);
+
+        System.out.println("Сумма: " + DoubleWrapper.add(a, b));
+        System.out.println("Умножение: " + DoubleWrapper.divide(a, b));
+        System.out.println("Возведение в степень: " + DoubleWrapper.pow(a, b));
+
+        scanner.close();
     }
 }
